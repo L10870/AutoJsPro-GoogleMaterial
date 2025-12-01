@@ -377,8 +377,7 @@ ui.drawer.addDrawerListener(toggle);
 ## 🙏 致谢
 
 - [hyb1996/Auto.js](https://github.com/hyb1996/Auto.js)
-- [snailuncle/webpackBaleAutojs](https://github.com/snailuncle/webpackBaleAutojs)
-- [bjc5233/autojs](https://github.com/bjc5233/autojs)
+
 
 ## 开源协议
 
