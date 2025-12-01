@@ -5,7 +5,7 @@
 <h1 align="center">AutoJsPro GoogleMaterial</h1>
 
 <p align="center">
-  <strong>🎨 AutoJs Pro 9 Material Design 3 UI 组件示例</strong>
+  <strong>🎨 一个基于AutoJs Pro 9，使用犀牛（Rhino）引擎，Js + xml实现 的 Google Material Design 3 UI 组件使用示例</strong>
 </p>
 
 <p align="center">
@@ -74,11 +74,11 @@
 
 ## 🚀 环境要求
 
-| 环境 | 版本要求 |
-|------|---------|
+| 环境             | 版本要求 |
+|----------------|---------|
 | **AutoJs Pro** | 9.0+ (推荐 9.3.11) |
-| **Android** | 7.0+ (API 24+) |
-| **auto 引擎** | Rhino犀牛引擎 |
+| **Android**    | 7.0+ (API 24+) |
+| **autoJs 引擎**  | Rhino犀牛引擎 |
 
 ---
 
