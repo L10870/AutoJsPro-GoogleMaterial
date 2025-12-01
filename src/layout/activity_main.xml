@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LinearLayout layout_width="match_parent" layout_height="match_parent" orientation="vertical" padding="0">
+    <com.google.android.material.appbar.MaterialToolbar bg="#fafafa" layout_width="fill_parent" layout_height="wrap_content">
+        <com.google.android.material.imageview.ShapeableImageView id="ShapeableImageViewButton" visibility="gone" src="@drawable/ic_add_circle_outline_black_48dp" layout_width="wrap_content" layout_height="30dp" layout_gravity="center" tint="#49454F" background="?selectableItemBackgroundBorderless" />
+        <com.google.android.material.imageview.ShapeableImageView animateLayoutChanges="true" id="ShapeableImageViewButton_A" visibility="gone" src="@drawable/ic_launch_black_48dp" layout_width="wrap_content" layout_height="30dp" margin="0 0 15 0" layout_gravity="center" tint="#49454F" background="?selectableItemBackgroundBorderless" />
+        <com.google.android.material.appbar.MaterialToolbar animateLayoutChanges="true" id="toolbar" title="Home" textStyle="bold" titleTextColor="#49454F" w="*" />
+    </com.google.android.material.appbar.MaterialToolbar>
+    <androidx.drawerlayout.widget.DrawerLayout id="drawer" openDrawer="start" fitsSystemWindows="true" layout_width="match_parent" layout_height="match_parent">
+        <LinearLayout layout_width="match_parent" layout_height="match_parent" orientation="vertical" padding="0">
+            <FrameLayout layout_weight="1" layout_height="match_parent" >
+                <androidx.coordinatorlayout.widget.CoordinatorLayout id="CoordinatorLayout">
+                    <com.stardust.autojs.core.ui.widget.JsViewPager layout_width="match_parent" layout_height="match_parent" id="viewpager" layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" bg="#fafafa">
+                        <ScrollView layout_width="match_parent" layout_height="match_parent" >
+                            <LinearLayout layout_width="match_parent" layout_height="match_parent" orientation="vertical" padding="0">
+                                <androidx.cardview.widget.CardView id="HomeButton" contentPadding="12" w="*" h="auto" cardBackgroundColor="{{ThemeColors}}" margin="15 15 15 0" foreground="?attr/selectableItemBackground" cardCornerRadius="15dp" cardElevation="5dp" layout_below="@+id/card_notification">
+                                    <LinearLayout layout_width="wrap_content" layout_height="wrap_content">
+                                        <com.google.android.material.imageview.ShapeableImageView tint="#fafafa" id="imgstart" src="@drawable/ic_whatshot_black_48dp" layout_gravity="center_vertical|left" layout_width="wrap_content" layout_height="30dp" />
+                                        <vertical margin="15" layout_gravity="center_vertical">
+                                            <text text="{{getAppName(activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0).packageName)}}" textColor="#fafafa" textStyle="bold" textSize="18sp" layout_gravity="center_vertical" />
+                                            <text text="版本号：{{app.versionName}}" textStyle="bold" textColor="#fafafa" textSize="14sp" marginTop='5' layout_gravity="center_vertical" />
+                                            <text id="DayWord" text="海内存知已，天涯若比邻。" visibility="gone" lineSpacingExtra="5dp" textColor="#fafafa" textStyle="bold" textSize="15sp" marginTop='5' layout_gravity="center_vertical" />
+                                        </vertical>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                                <text marginLeft="15" marginTop="10" marginBottom="10" textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >权限:</text>
+                                <vertical w="*" h="55">
+                                    <frame w="*" h="*">
+                                        <com.google.android.material.materialswitch.MaterialSwitch id="AccessibilityPermissions" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_accessibility_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text text="无障碍服务" textStyle="bold" textColor="#49454F" textSize="14sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <vertical w="*" h="55">
+                                    <frame w="*" h="*">
+                                        <com.google.android.material.materialswitch.MaterialSwitch id="FloatingWindowPWPermissions" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_photo_size_select_large_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text text="悬浮窗权限" textStyle="bold" textColor="#49454F" textSize="15sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <text marginLeft="15" marginTop="10" textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >功能:</text>
+                                <com.google.android.material.chip.ChipGroup margin="10 10 10 0" id="chipGroup" chipSpacingVertical="5dp" singleLine="true" singleSelection="true">
+                                    <com.google.android.material.chip.Chip layout_width="wrap_content" chipBackgroundColor="#000000" layout_height="wrap_content" checkable="true" text="功能A" checkedIcon="@drawable/ic_done_all_black_48dp" checkedIconEnabled="true" />
+                                    <com.google.android.material.chip.Chip layout_width="wrap_content" layout_height="wrap_content" checkable="true" text="功能B" checkedIcon="@drawable/ic_done_all_black_48dp" checkedIconEnabled="true" />
+                                    <com.google.android.material.chip.Chip layout_width="wrap_content" layout_height="wrap_content" checkable="true" text="功能C" checkedIcon="@drawable/ic_done_all_black_48dp" checkedIconEnabled="true" />
+                                    <com.google.android.material.chip.Chip layout_width="wrap_content" layout_height="wrap_content" checkable="true" text="功能D" checkedIcon="@drawable/ic_done_all_black_48dp" checkedIconEnabled="true" />
+                                    <com.google.android.material.chip.Chip layout_width="wrap_content" layout_height="wrap_content" checkable="true" text="功能E" checkedIcon="@drawable/ic_done_all_black_48dp" checkedIconEnabled="true" />
+                                    <com.google.android.material.chip.Chip layout_width="wrap_content" layout_height="wrap_content" checkable="true" text="功能F" checkedIcon="@drawable/ic_done_all_black_48dp" checkedIconEnabled="true" />
+                                </com.google.android.material.chip.ChipGroup>
+                                
+                                
+                            </LinearLayout>
+                        </ScrollView>
+                        <LinearLayout layout_width="match_parent" layout_height="match_parent" orientation="vertical" padding="0">
+                            <com.google.android.material.tabs.TabLayout id="TabLayout" layout_width="match_parent" layout_height="wrap_content" layout_constraintEnd_toEndOf="parent" layout_constraintStart_toStartOf="parent" layout_constraintTop_toTopOf="parent" bg="#fafafa" />
+                            <com.stardust.autojs.core.ui.widget.JsViewPager layout_width="match_parent" layout_height="match_parent" id="viewpager_tab" layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"bg="#fafafa">
+                                <LinearLayout layout_width="match_parent" layout_height="match_parent" orientation="vertical" >
+                                    <list id="ListView" layout_width="match_parent" layout_height="match_parent" marginTop="10" >
+                                        <vertical layout_width="match_parent" layout_height="wrap_content">
+                                            <frame layout_width="match_parent" layout_height="match_parent" >
+                                                <button id="ListButton" w="*" h="*" background="?android:attr/selectableItemBackground" />
+                                                <horizontal layout_width="match_parent" layout_height="wrap_content" >
+                                                    <img tint="#49454F" src="@drawable/ic_account_circle_black_48dp" layout_gravity="center_vertical|left" margin="20 0 20 0" layout_width="wrap_content" layout_height="wrap_content"  />
+                                                    <vertical margin="0 15 0 15" layout_gravity="center_vertical">
+                                                        <text text="{{Account}}" id="Account" textColor="#49454F" textStyle="bold" textSize="18sp" layout_gravity="center_vertical" />
+                                                        <text text="{{Password}}" id="password" textStyle="bold" textColor="#49454F" textSize="14sp" marginTop='5' layout_gravity="center_vertical" />
+                                                    </vertical>
+                                                </horizontal>
+                                            </frame>
+                                        </vertical>
+                                    </list>
+                                </LinearLayout>
+                                <ScrollView layout_width="match_parent"layout_height="match_parent">
+                                    <LinearLayout layout_width="match_parent" margin="20 20 20 0" layout_height="match_parent" orientation="vertical" padding="0">
+                                        <text margin="0 0 0 0"  textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}">按钮控件</text>
+                                        
+                                        <com.google.android.material.card.MaterialCardView margin="0 10 0 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="15" strokeWidth="4" strokeColor="#49454F" contentPadding="5"  layout_width="match_parent" layout_height="wrap_content" >
+                                            <LinearLayout margin="10" layout_width="match_parent" layout_height="match_parent" orientation="vertical" >
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">MaterialButton</text>
+                                                <horizontal layout_width="match_parent" layout_height="wrap_content" >
+                                                    <com.google.android.material.button.MaterialButton textSize="16sp" id="ButtomSheet"  text="按钮" backgroundTint="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content"/>
+                                                    <com.google.android.material.button.MaterialButton textSize="16sp" margin="5 0 0 0" text="图标按钮" backgroundTint="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" icon="@drawable/ic_grade_black_48dp"  />
+                                                </horizontal>
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >MaterialButtonToggleGroup</text>
+                                                <com.google.android.material.button.MaterialButtonToggleGroup id="ButtonToggleGroup" layout_width="match_parent" layout_height="match_parent" singleSelection="true" orientation="horizontal">
+                                                    <com.google.android.material.button.MaterialButton   text="按钮1" backgroundTint="{{ThemeColors}}"/>
+                                                    <com.google.android.material.button.MaterialButton  text="按钮2" backgroundTint="{{ThemeColors}}"/>
+                                                    <com.google.android.material.button.MaterialButton text="按钮3" backgroundTint="{{ThemeColors}}"/>
+                                                </com.google.android.material.button.MaterialButtonToggleGroup>
+                                            </LinearLayout>
+                                        </com.google.android.material.card.MaterialCardView>
+                                        
+                                        <text margin="0 10 0 0"  textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}">进度条控件</text>
+                                        
+                                        <com.google.android.material.card.MaterialCardView margin="0 10 0 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="15" strokeWidth="4" strokeColor="#49454F" contentPadding="5"  layout_width="match_parent" layout_height="wrap_content" >
+                                            <LinearLayout margin="10" layout_width="match_parent" layout_height="match_parent" orientation="vertical" >
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >直线无限进度条</text>
+                                                
+                                                <com.google.android.material.progressindicator.LinearProgressIndicator  id="LinearProgressIndicator"  margin="10 10 0 10" layout_width="match_parent" layout_height="wrap_content" indeterminate="true"/>
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >圆形无限进度条</text>
+                                                
+                                                
+                                                <com.google.android.material.progressindicator.CircularProgressIndicator id="CircularProgressIndicator" margin="10 10 0 10" layout_width="wrap_content" layout_height="wrap_content" layout_gravity="center" indeterminate="true"/>
+                                                
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >直线进度条</text>
+                                                
+                                                <com.google.android.material.progressindicator.LinearProgressIndicator  id="LinearProgressIndicator_indeterminate_false" margin="10 10 0 10" max="100" layout_width="match_parent" layout_height="wrap_content" />
+                                                
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >圆形进度条</text>
+                                                
+                                                <com.google.android.material.progressindicator.CircularProgressIndicator id="CircularProgressIndicator_indeterminate_false" margin="0 10 0 10"   max="100" layout_width="wrap_content" layout_height="wrap_content" layout_gravity="center"/>
+                                            </LinearLayout>
+                                            
+                                        </com.google.android.material.card.MaterialCardView>
+                                        
+                                        
+                                        
+                                        
+                                        <text margin="0 10 0 0"  textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}">Slider滑块控件</text>
+                                        
+                                        <com.google.android.material.card.MaterialCardView margin="0 10 0 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="15" strokeWidth="4" strokeColor="#49454F" contentPadding="5"  layout_width="match_parent" layout_height="wrap_content" >
+                                            <LinearLayout margin="10" layout_width="match_parent" layout_height="match_parent" orientation="vertical" >
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >普通的Slider</text>
+                                                
+                                                <com.google.android.material.slider.Slider  id="Slider"  layout_width="match_parent" layout_height="wrap_content" layout_gravity="center" value="3.09" valueFrom="0.0" valueTo="11.0" />
+                                                
+                                                
+                                                <text margin="10 10 0 10"  textSize="14sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" >带有步长的Slider</text>
+                                                
+                                                <!-- 从0到100  均分100段  每段距离为1  -->
+                                                <com.google.android.material.slider.Slider id="Slider_stepSize" layout_width="match_parent" layout_height="wrap_content" stepSize="1.0" value="0" valueFrom="0" valueTo="100" />
+                                                
+                                            </LinearLayout>
+                                            
+                                        </com.google.android.material.card.MaterialCardView>
+                                        
+                                        <text margin="0 10 0 0"  textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}">输入框控件</text>
+                                        
+                                        <com.google.android.material.card.MaterialCardView margin="0 10 0 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="15" strokeWidth="4" strokeColor="#49454F" contentPadding="5"  layout_width="match_parent" layout_height="wrap_content" >
+                                            <LinearLayout margin="10" layout_width="match_parent" layout_height="match_parent" orientation="vertical" >
+                                                <com.google.android.material.textfield.TextInputLayout layout_width="match_parent" layout_height="wrap_content" hint="输入框控件">
+                                                    <com.google.android.material.textfield.TextInputEditText layout_width="match_parent" layout_height="wrap_content" />
+                                                </com.google.android.material.textfield.TextInputLayout>
+                                                
+                                            </LinearLayout>
+                                            
+                                        </com.google.android.material.card.MaterialCardView>
+                                        
+                                        
+                                        <LinearLayout layout_width="match_parent" margin="0 0 0 100" layout_height="match_parent" orientation="vertical"/>
+                                        
+                                        
+                                    </LinearLayout>
+                                </ScrollView>
+                                <androidx.coordinatorlayout.widget.CoordinatorLayout layout_width="match_parent"layout_height="match_parent" >
+                                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout id="swipe" >
+                                        
+                                        <LinearLayout layout_width="match_parent" margin="20 20 20 0" layout_height="match_parent" orientation="vertical" padding="0">
+                                            <text margin="20 20 0 0"  textSize="16sp" textStyle="bold" textColor="{{ThemeColors}}">下拉刷新控件</text>
+                                            <text margin="0 30 0 30"  textSize="15sp" textStyle="bold" layout_gravity="center" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">下拉刷新↑</text>
+                                        </LinearLayout>
+                                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout >
+                                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                                
+                                <com.stardust.autojs.core.console.FileConsoleView id="console" layout_width="match_parent" layout_height="match_parent" />
+                                
+                            </com.stardust.autojs.core.ui.widget.JsViewPager>
+                        </LinearLayout>
+                        
+                        <ScrollView layout_width="match_parent" layout_height="match_parent" >
+                            <LinearLayout layout_width="match_parent" layout_height="match_parent" orientation="vertical" padding="0">
+                                <text marginLeft="15" marginTop="10" textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">主题</text>
+                                
+                                <vertical w="*" marginTop="10" h="55">
+                                    <frame w="*" h="*">
+                                        <button id="ThemeColors" w="*" h="*" background="?android:attr/selectableItemBackground" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_color_lens_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text id="ThemeColorsText" text="主题颜色" textStyle="bold" textColor="#49454F" textSize="14sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <vertical w="*" marginTop="10" h="55">
+                                    <frame w="*" h="*">
+                                        <button id="LogTheme" w="*" h="*" background="?android:attr/selectableItemBackground" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_subject_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text id="ThemeColorsText" text="日志个性化" textStyle="bold" textColor="#49454F" textSize="14sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <text marginLeft="15" marginTop="10" textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">调试与运行</text>
+                                <vertical w="*" h="60">
+                                    <frame w="*" h="*">
+                                        <com.google.android.material.materialswitch.MaterialSwitch id="stop_all_on_volume_up" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_volume_down_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text text="音量上键停止脚本" textStyle="bold" textColor="#49454F" textSize="15sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <vertical w="*" h="60">
+                                    <frame w="*" h="*">
+                                        <com.google.android.material.materialswitch.MaterialSwitch id="stable_mode" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_change_history_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text text="启用稳定模式" textStyle="bold" textColor="#49454F" textSize="15sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <vertical w="*" h="80">
+                                    <frame w="*" h="*">
+                                        <com.google.android.material.materialswitch.MaterialSwitch id="foreground_service" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_clear_all_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <vertical layout_gravity="center_vertical">
+                                                <text text="前台服务" textStyle="bold" textColor="#49454F" textSize="15sp" marginLeft='15' layout_gravity="center_vertical" />
+                                                <text text="脚本在某些设备上可能存在掉线状况，开启此功能已改善" paddingRight="80" textStyle="bold" textColor="#49454F" textSize="13sp" marginLeft='15' layout_gravity="center_vertical" />
+                                            </vertical>
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                                <vertical w="*" h="60">
+                                    <frame w="*" h="*">
+                                        <com.google.android.material.materialswitch.MaterialSwitch id="not_show_console" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                                        <horizontal w="*" h="*">
+                                            <img tint="#49454F" src="@drawable/ic_speaker_notes_off_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                            <text text="启动时不显示日志界面" textStyle="bold" textColor="#49454F" textSize="15sp" marginLeft='15' layout_gravity="center_vertical" />
+                                        </horizontal>
+                                    </frame>
+                                </vertical>
+                            </LinearLayout>
+                        </ScrollView>
+                    </com.stardust.autojs.core.ui.widget.JsViewPager>
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton marginRight="20" marginBottom="20" layout_gravity="right|bottom" background="?attr/windowBackground" layout_width="wrap_content" backgroundTint="{{ThemeColors}}" tint="#FFFFFFFF" id="StartButton" layout_height="wrap_content" src="@drawable/ic_play_arrow_black_48dp" />
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </FrameLayout>
+            <com.google.android.material.bottomnavigation.BottomNavigationView id="navigation" bg="#E8EFF7" tint="#fafafa" layout_width="match_parent" layout_height="wrap_content" layout_gravity="bottom" layout_marginStart="0dp" layout_marginEnd="0dp" background="?attr/windowBackground" />
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView  id="NavigationView" bg="#fafafa" layout_gravity="left" layout_width="wrap_content" layout_height="match_parent">
+            <LinearLayout layout_width="match_parent" layout_height="wrap_content" orientation="vertical">
+                <com.google.android.material.imageview.ShapeableImageView  src="file://images/ic_app_logo.png" layout_width="wrap_content" layout_height="60dp" margin="20 10 0 0" layout_gravity="left" />
+                <text text="{{getAppName(activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0).packageName)}}" textColor="#49454F" textStyle="bold" textSize="18sp" layout_gravity="left" margin="20 10 0 0"  />
+                <text text="2696164823@qq.com" textColor="#49454F" textStyle="bold" textSize="15sp" layout_gravity="left" margin="20 5 0 0"  />
+                <text  bg="#49454F" layout_width="match_parent" layout_height="1dp" margin="20 10 20 0"  />
+                <androidx.cardview.widget.CardView id="Donation" margin="10 10 10 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="match_parent" layout_height="match_parent" >
+                    <LinearLayout layout_width="match_parent" layout_height="wrap_content"  orientation="vertical">
+                        <LinearLayout layout_width="match_parent" layout_height="wrap_content" orientation="vertical">
+                            <horizontal layout_width="match_parent" layout_height="wrap_content">
+                                <img tint="#49454F" src="@drawable/ic_card_giftcard_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" layout_width="wrap_content" layout_height="wrap_content"  />
+                                <vertical layout_gravity="center_vertical" >
+                                    <text text="捐赠" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                                    <text text="请给我钱"  textStyle="bold" textColor="#49454F" textSize="13sp" layout_gravity="center_vertical" />
+                                </vertical>
+                            </horizontal>
+                        </LinearLayout>
+                        <LinearLayout id="DonationChildLayout" visibility="gone" layout_width="match_parent" layout_height="wrap_content" margin="20 10 10 0" orientation="vertical">
+                            <androidx.cardview.widget.CardView id="WeChat"  cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="match_parent" layout_height="match_parent" >
+                                <horizontal w="*" h="*">
+                                    <img tint="#49454F" src="file://images/icon_wechat_pay.png" layout_gravity="center_vertical|left" margin="10 0 10 0"  w="30" h="30" />
+                                    <vertical layout_gravity="center_vertical" >
+                                        <text text="微信" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                                    </vertical>
+                                </horizontal>
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView id="Alipay" margin="0 10 0 5" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="match_parent" layout_height="match_parent" >
+                                <horizontal w="*" h="*">
+                                    <img tint="#49454F" src="file://images/icon_alipay.png" layout_gravity="center_vertical|left" margin="10 0 10 0" w="30" h="30" />
+                                    <vertical layout_gravity="center_vertical" >
+                                        <text text="支付宝" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                                    </vertical>
+                                </horizontal>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                
+                <androidx.cardview.widget.CardView id="DebugLog" margin="10 10 10 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="match_parent" layout_height="match_parent" >
+                    <horizontal w="*" h="*">
+                        <img tint="#49454F" src="@drawable/ic_bug_report_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                        <vertical layout_gravity="center_vertical" >
+                            <text text="导出调试信息" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                            <text text="这种信息非常有用哇"  textStyle="bold" textColor="#49454F" textSize="13sp" layout_gravity="center_vertical" />
+                        </vertical>
+                    </horizontal>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView id="About" margin="10 10 10 0" cardBackgroundColor="#fafafa" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="match_parent" layout_height="match_parent" >
+                    <horizontal w="*" h="*">
+                        <img tint="#49454F" src="@drawable/ic_error_outline_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                        <vertical layout_gravity="center_vertical" >
+                            <text text="关于" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                        </vertical>
+                    </horizontal>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

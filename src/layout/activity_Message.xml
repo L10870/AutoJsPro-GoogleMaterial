@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<androidx.cardview.widget.CardView  id="TextLayout" cardBackgroundColor="#E16B8C" cardElevation="0" margin="0 2 20 0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="wrap_content">
+    <LinearLayout  orientation="vertical">
+        <text id="Text" text="" margin="5 0 5 0" textSize="11dp" textColor="#fafafa" textStyle="bold"/>
+        <text id="Time" text="" margin="15 0 15 0" textSize="10dp" textColor="#fafafa" textStyle="bold" gravity="right" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

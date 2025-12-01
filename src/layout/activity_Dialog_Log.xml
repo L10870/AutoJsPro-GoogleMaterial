@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LinearLayout  orientation="vertical">
+    <LinearLayout margin="20" id="Layout" layout_width="match_parent" layout_height="match_parent" orientation="vertical">
+        <com.google.android.material.card.MaterialCardView marginTop="5" marginBottom="5" cardBackgroundColor="#00000000" cardElevation="0" cardCornerRadius="15" strokeWidth="4" strokeColor="#49454F" contentPadding="5"  layout_width="match_parent" layout_height="wrap_content" >
+            <LinearLayout id="Layout" orientation="vertical" margin="5" >
+                <LinearLayout  orientation="vertical">
+                    <androidx.cardview.widget.CardView  cardBackgroundColor="#CA7A2C" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="wrap_content">
+                        <Chronometer id="chronometer" margin="5 0 5 0" textSize="15dp" textColor="#fafafa" style="Widget/AppCompat.Button.Borderless" textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <LinearLayout id="MessageLayout" orientation="vertical">
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <FrameLayout layout_weight="1" layout_height="match_parent" >
+            <ScrollView layout_width="match_parent" layout_height="wrap_content" >
+                <LinearLayout  orientation="vertical">
+                    <text marginLeft='5' textSize="15sp" margin="0 0 10 0"  marginTop="10" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">颜色展示(长按编辑)：</text>
+                    <HorizontalScrollView layout_width="match_parent" layout_height="wrap_content" scrollbars="none" >
+                        <com.google.android.material.chip.ChipGroup margin="0 0 0 0" id="chipGroup_Color" chipSpacingVertical="5dp" singleSelection="false">
+                        </com.google.android.material.chip.ChipGroup>
+                    </HorizontalScrollView>
+                    <text marginLeft='5' textSize="15sp" margin="0 0 10 0"  marginTop="10" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">气泡颜色：</text>
+                    <horizontal w="*" h="auto">
+                        <com.google.android.material.button.MaterialButton margin="0 0 10 0" textSize="15sp" id="addColor" text="添加颜色" backgroundTint="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content" />
+                        <com.google.android.material.textfield.TextInputLayout id="ErrorEditLayout" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" layout_width="match_parent" layout_height="wrap_content" hintSize="15dp" hint="十六进制颜色码">
+                            <com.google.android.material.textfield.TextInputEditText id="colorEdit" layout_width="match_parent" layout_height="wrap_content" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </horizontal>
+                    <vertical margin="0 10 0 0">
+                        <frame w="*" h="*" >
+                            <com.google.android.material.materialswitch.MaterialSwitch id="isMessageTime" foreground="?android:attr/selectableItemBackground" paddingRight="20" layout_gravity="right|center_vertical" />
+                            <horizontal w="*" h="*">
+                                <img tint="#49454F" src="@drawable/ic_alarm_black_48dp" layout_gravity="center_vertical|left" margin="15 0 15 0" w="auto" h="auto" />
+                                <text text="时间显示" textStyle="bold" textColor="#49454F" textSize="15sp" marginLeft='15' layout_gravity="center_vertical" />
+                            </horizontal>
+                        </frame>
+                    </vertical>
+                    <text marginLeft='5'    marginTop="10" textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">气泡透明度：</text>
+                    <com.google.android.material.slider.Slider id="transparency"  layout_width="match_parent" layout_height="wrap_content" layout_gravity="center" value="0.1" valueFrom="0.1" valueTo="1" />
+                    <text marginLeft='5' textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">最高容纳多少条消息：</text>
+                    <com.google.android.material.slider.Slider id="messageMax" layout_width="match_parent" layout_height="wrap_content" stepSize="1" value="1" valueFrom="1" valueTo="20" />
+                    <text marginLeft='5'    marginTop="10" textSize="15sp" textStyle="bold" textColor="{{ThemeColors}}" layout_width="wrap_content" layout_height="wrap_content">动画时间(ms)：</text>
+                    <com.google.android.material.slider.Slider   id="messageAnimation"  layout_width="match_parent" layout_height="wrap_content" layout_gravity="center" value="10" valueFrom="10" valueTo="1000" />
+                    <LinearLayout id="LayoutBottom" marginBottom="60" />
+                </LinearLayout>
+            </ScrollView>
+            <androidx.cardview.widget.CardView id="StopLayout" layout_width="match_parent" layout_gravity="bottom" cardCornerRadius="0" cardBackgroundColor="#EEE8F4" layout_height="wrap_content" >
+                <LinearLayout layout_width="wrap_content" layout_gravity="right">
+                    <androidx.cardview.widget.CardView  id="cancel" margin="10 10 10 0" cardBackgroundColor="#00000000" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="wrap_content">
+                        <text text="取消" margin="10 5 10 5" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView  id="affirm" margin="10 10 10 0" cardBackgroundColor="#00000000" cardElevation="0" cardCornerRadius="25"  contentPadding="5" foreground="?attr/selectableItemBackground" layout_width="wrap_content">
+                        <text text="应用" margin="10 5 10 5" textStyle="bold" textColor="#49454F" textSize="15sp" layout_gravity="center_vertical" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView >
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
