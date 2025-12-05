@@ -2,7 +2,7 @@
   <img src="images/ic_app_logo.png" alt="GoogleMaterial Logo" width="120" height="120">
 </p>
 
-<h1 align="center">AutoJsPro GoogleMaterial</h1>
+<h1 align="center">AutoJsPro GoogleMaterial3 M3</h1>
 
 <p align="center">
   <strong>🎨 一个基于AutoJs Pro 9，使用犀牛（Rhino）引擎，Js + xml实现 的 Google Material Design 3 UI 组件使用示例</strong>
