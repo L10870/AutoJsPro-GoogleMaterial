@@ -15,9 +15,6 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License">
 </p>
 
-<p align="center">
-  🎉一个基于 AutoJs Pro 9 的 Material Design 3 (M3) UI 组件使用模板，<br>
-</p>
 
 ---
 
